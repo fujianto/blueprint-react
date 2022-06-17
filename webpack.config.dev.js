@@ -3,6 +3,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
   filename: "./index.html"
 });
+
 module.exports = {
   mode: 'development',
   module: {
