@@ -12,7 +12,7 @@ const cleanWebpackPlugin = new CleanWebpackPlugin()
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'app.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [htmlPlugin, cleanWebpackPlugin]
