@@ -13,7 +13,7 @@
     "swcbuild": "webpack --config webpack.config.swc.js",
     "esdev": "webpack-dev-server -- --env mode=development --config webpack.config.esbuild.js",
     "esbuild": "webpack --config webpack.config.esbuild.js",
-    "prod": "webpack -- --env mode=production"
+    "prod": "webpack -- --env mode=production --config webpack.config.production.js"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +35,7 @@
     "css-loader": "^6.7.1",
     "esbuild-loader": "^2.19.0",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
     "style-loader": "^3.3.1",
     "swc-loader": "^0.2.3",
     "webpack": "^5.73.0",

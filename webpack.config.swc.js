@@ -15,6 +15,10 @@ module.exports = merge(commonConfig, {
         // `.swcrc` can be used to configure swc  
         loader: "swc-loader"
       }
+    },
+    {
+      test: /\.css$/,
+      use: ["style-loader", "css-loader"]
     }]
   }
 });
