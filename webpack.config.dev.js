@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
+  inject: true, // inject js in body tag
   filename: "./index.html"
 });
 
@@ -10,6 +11,10 @@ const cleanWebpackPlugin = new CleanWebpackPlugin()
 
 module.exports = {
   mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   entry: './src/index.js',
   output: {
     filename: 'app.js',

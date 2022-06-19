@@ -1,12 +1,17 @@
+const path = require('path')
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
+  inject: true, // inject js in body tag
   filename: "./index.html"
 });
 
+const cleanWebpackPlugin = new CleanWebpackPlugin()
+
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
+  mode: 'production',
+  devtool: 'source-map',
   devServer: {
     contentBase: './dist',
   },
@@ -17,11 +22,10 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.m?js$/,
-      exclude: /(node_modules|bower_components)/,
+      test: /\.js$/,
+      exclude: /node_modules/,
       use: {
-        // `.swcrc` can be used to configure swc  
-        loader: "swc-loader"
+        loader: "babel-loader"
       }
     },
     {
@@ -30,5 +34,5 @@ module.exports = {
     }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [htmlPlugin, cleanWebpackPlugin]
 };
