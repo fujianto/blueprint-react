@@ -7,9 +7,6 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = merge(commonConfig, {
   mode: 'production',
   devtool: 'source-map',
-  devServer: {
-    contentBase: './dist',
-  },
   module: {
     rules: [{
       test: /\.js$/,
@@ -32,6 +29,7 @@ module.exports = merge(commonConfig, {
     }),
   ],
   optimization: {
+    minimize: true,
     minimizer: [
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: {
@@ -45,9 +43,9 @@ module.exports = merge(commonConfig, {
         // Use multi-process parallel running to improve the build speed
         // Default number of concurrent runs: os.cpus().length - 1
         parallel: true,
-        // Enable file caching
-        cache: true,
-        sourceMap: true,
+        terserOptions: {
+          sourceMap: true,
+        }
       }),
     ],
   },
