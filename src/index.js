@@ -1,14 +1,26 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import style from './style.css'
-import logoWeb from './assets/images/logo.jpg'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Home from './home'
+import About from './about';
 
 const App = () => {
   return (
-    <div className="container">
-      <img src={logoWeb} />
-      <h1 className='title'>React ESBUILD Blueprint!</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+    </Routes>
   );
 }
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+  , document.getElementById('app'));
