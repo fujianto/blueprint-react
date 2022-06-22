@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
+import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter,
   Routes,
@@ -9,6 +9,9 @@ import {
 import Home from './home'
 import About from './about';
 
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+
 const App = () => {
   return (
     <Routes>
@@ -17,10 +20,11 @@ const App = () => {
     </Routes>
   );
 }
-ReactDOM.render(
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
-  , document.getElementById('app'));
+);
