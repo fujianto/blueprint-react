@@ -5,10 +5,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { lazy } from '@loadable/component'
+import loadable from '@loadable/component'
 
-const Home = lazy(() => import('./Home'))
-const About = lazy(() => import('./About'))
+const Home = loadable(() => import('./Home'))
+const About = loadable(() => import('./About'))
 
 const container = document.getElementById('app') as Element;
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -16,8 +16,8 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home fallback={<div>Loading...</div>} />} />
-      <Route path="about" element={<About fallback={<div>Loading...</div>} />} />
+      <Route path="/" element={<Home fallback={<>Loading...</>} />} />
+      <Route path="about" element={<About fallback={<>Loading...</>} />} />
     </Routes>
   );
 }
