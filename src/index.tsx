@@ -10,7 +10,7 @@ import { lazy } from '@loadable/component'
 const Home = lazy(() => import('./Home'))
 const About = lazy(() => import('./About'))
 
-const container = document.getElementById('app');
+const container = document.getElementById('app') as Element;
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
 const App = () => {

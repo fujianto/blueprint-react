@@ -21,6 +21,18 @@ module.exports = merge(commonConfig, {
       }
     },
     {
+      test: /\.(ts|tsx)$/,
+      exclude: /node_modules/,
+      resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+      },
+      loader: 'esbuild-loader',
+      options: {
+        loader: 'tsx',
+        target: 'es2015'  // Syntax to compile to (see options below for possible values)
+      }
+    },
+    {
       test: /\.css$/,
       use: ["style-loader", "css-loader"]
     }]

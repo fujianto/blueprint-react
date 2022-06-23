@@ -20,6 +20,14 @@ module.exports = merge(commonConfig, {
         }
       },
       {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.ts', '.tsx', '.js', '.json'],
+        },
+        use: 'ts-loader',
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       }

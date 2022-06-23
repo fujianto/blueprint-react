@@ -20,6 +20,25 @@ module.exports = merge(commonConfig, {
       }
     },
     {
+      test: /\.(ts|tsx)$/,
+      exclude: /node_modules/,
+      resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+      },
+      use: {
+        loader: 'swc-loader',
+        options: {
+          // This makes swc-loader invoke swc synchronously.
+          sync: true,
+          jsc: {
+            parser: {
+              syntax: "typescript"
+            }
+          }
+        }
+      }
+    },
+    {
       test: /\.css$/,
       use: ["style-loader", "css-loader"]
     }]
