@@ -10,7 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 const cleanWebpackPlugin = new CleanWebpackPlugin()
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/app.tsx',
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
