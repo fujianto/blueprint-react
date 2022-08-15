@@ -6,9 +6,11 @@ import {
   Route,
 } from "react-router-dom";
 import loadable from '@loadable/component'
+import { store } from './store'
+import { Provider } from 'react-redux'
 
-const Home = loadable(() => import('./Home'))
-const About = loadable(() => import('./About'))
+const Home = loadable(() => import('./pages/Home'))
+const About = loadable(() => import('./pages/About'))
 
 const container = document.getElementById('app') as Element;
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -23,9 +25,11 @@ const App = () => {
 }
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>
 );
