@@ -10,6 +10,7 @@
     "webpack-dev-server": "webpack-dev-server",
     "dev": "webpack-dev-server -- --env mode=development --config webpack.config.dev.js",
     "swcdev": "webpack-dev-server -- --env mode=development --config webpack.config.swc.js",
+    "swcstart": "webpack serve -- --env mode=development --config webpack.config.swc.js",
     "swcbuild": "webpack --config webpack.config.swc.js",
     "esdev": "webpack-dev-server -- --env mode=development --config webpack.config.esbuild.js",
     "esbuild": "webpack --config webpack.config.esbuild.js",

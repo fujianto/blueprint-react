@@ -1,18 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-const GET_POSTS = 'GET_POSTS'
+import { Posts } from '../../types/index'
 
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
-
-interface PostList extends Array<Post> { }
 
 export interface PostState {
-  value: PostList
+  value: Posts
 }
 
 const initialState: PostState = {
@@ -23,7 +15,7 @@ export const postSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    getPosts: (state, action: PayloadAction<PostList>) => {
+    getPosts: (state, action: PayloadAction<Posts>) => {
       state.value = action.payload
     }
   }
