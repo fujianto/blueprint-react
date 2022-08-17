@@ -26,6 +26,7 @@ const App = () => {
 
 root.render(
   <Provider store={store}>
+    {/* Render component twice on strict mode for debugging */}
     <React.StrictMode>
       <BrowserRouter>
         <App />
