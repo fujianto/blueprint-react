@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { getPosts } from '../../store/slice/post_slice'
+import { setPosts } from '../../store/slice/post_slice'
 import type { RootState } from '../../store'
 import fetchPosts from '../../services/posts'
 import { Posts } from '../../types/index'
@@ -12,7 +12,7 @@ function Home() {
 
   useEffect(() => {
     fetchPosts('https://jsonplaceholder.typicode.com/posts').then(data => {
-      dispatch(getPosts(data as Posts))
+      dispatch(setPosts(data as Posts))
     })
   }, [])
 
