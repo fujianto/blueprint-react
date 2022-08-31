@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { setPosts } from '../../store/slice/post_slice'
-import type { RootState } from '../../store'
+import { setPosts } from '../../store/slices/posts'
+import { useAppDispatch, useAppSelector } from '../../store/hook'
 import fetchPosts from '../../services/posts'
 import { Posts } from '../../types/index'
 
 function Home() {
-  const posts = useSelector((state: RootState) => state.posts.value)
-  const dispatch = useDispatch()
+  const posts = useAppSelector((state) => state.posts.value)
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    fetchPosts('https://jsonplaceholder.typicode.com/posts').then(data => {
-      dispatch(setPosts(data as Posts))
+    fetchPosts<Posts>('https://jsonplaceholder.typicode.com/posts').then(data => {
+      dispatch(setPosts({ data: data as Posts, status: "success" }))
     })
   }, [])
 
@@ -25,7 +24,7 @@ function Home() {
 
         <h2>Posts</h2>
         {
-          posts.map((post, idx) => 
+          posts.map((post, idx) =>
             <div key={post.id + idx}>
               <h2>{post.title}</h2>
               <p>{post.body}</p>
