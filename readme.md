@@ -2,10 +2,11 @@
 
 # WebPack vs SWC vs ESBuild
 
-This project will be used to compare build time between several react built tools. 
+This project will be used to compare build time between several react built tools.
 Currently the result is as follow. Using alternative build system is 50% fastr compared to webpack.
 
 ### yarn build
+
 ```
  5.1234s   assets by path *.js 3.62 MiB
    0.0004s     asset main.3cb4d43afed30995432e.js 3.61 MiB [emitted] [immutable] (name: main)
@@ -33,6 +34,7 @@ Currently the result is as follow. Using alternative build system is 50% fastr c
 ```
 
 ### yarn esbuild
+
 ```
 2.1039s   assets by path *.js 1.44 MiB
    0.0005s     asset main.8c77764620b8727f72db.js 1.44 MiB [emitted] [immutable] (name: main) 1 related asset
@@ -60,6 +62,7 @@ Currently the result is as follow. Using alternative build system is 50% fastr c
 ```
 
 ### yarn swcbuild
+
 ```
 2.2685s   assets by path *.js 3.72 MiB
    0.0005s     asset main.fc799be3cb423c3f1375.js 3.71 MiB [emitted] [immutable] (name: main)

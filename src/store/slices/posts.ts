@@ -4,29 +4,29 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { Posts } from '../../types/index';
 
 export interface PostState {
-    status: string;
-    value: Posts;
+  status: string;
+  value: Posts;
 }
 
 const initialState: PostState = {
-    status: 'loading',
-    value: [],
+  status: 'loading',
+  value: []
 };
 
 interface PostProps {
-    data: Posts;
-    status: string;
+  data: Posts;
+  status: string;
 }
 
 export const postSlice = createSlice({
-    name: 'posts',
-    initialState,
-    reducers: {
-        setPosts: (state, action: PayloadAction<PostProps>) => {
-            state.value = action.payload.data;
-            state.status = action.payload.status;
-        },
-    },
+  name: 'posts',
+  initialState,
+  reducers: {
+    setPosts: (state, action: PayloadAction<PostProps>) => {
+      state.value = action.payload.data;
+      state.status = action.payload.status;
+    }
+  }
 });
 
 export const { setPosts } = postSlice.actions;

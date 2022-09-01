@@ -13,21 +13,21 @@ const container = document.getElementById('app') as Element;
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
 const App = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<Home fallback={<>Loading...</>} />} />
-            <Route path="about" element={<About fallback={<>Loading...</>} />} />
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<Home fallback={<>Loading...</>} />} />
+      <Route path="about" element={<About fallback={<>Loading...</>} />} />
+    </Routes>
+  );
 };
 
 root.render(
-    <Provider store={store}>
-        {/* Render component twice on strict mode for debugging */}
-        <React.StrictMode>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </React.StrictMode>
-    </Provider>,
+  <Provider store={store}>
+    {/* Render component twice on strict mode for debugging */}
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>
 );
