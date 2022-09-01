@@ -16,8 +16,9 @@
     "swcstart": "webpack serve -- --env mode=development --config webpack.config.swc.js",
     "prod": "webpack -- --env mode=production --config webpack.config.production.js",
     "buildtsc": "tsc",
-    "linting": "eslint '*/**/*.{js,ts,tsx}'",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.js"
   },
   "keywords": [
     "React Js",

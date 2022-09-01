@@ -1,13 +1,13 @@
-const path = require('path')
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
+  template: './src/index.html',
   inject: true, // inject js in body tag
-  filename: "./index.html"
+  filename: './index.html'
 });
 
-const cleanWebpackPlugin = new CleanWebpackPlugin()
+const cleanWebpackPlugin = new CleanWebpackPlugin();
 
 module.exports = {
   entry: './src/app.tsx',
@@ -20,12 +20,12 @@ module.exports = {
     rules: [
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: 'asset/resource'
       }
     ]
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   plugins: [htmlPlugin, cleanWebpackPlugin]
 };
