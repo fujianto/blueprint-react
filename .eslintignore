@@ -1,0 +1,9 @@
+.cache/
+.vscode
+.yarn
+/assets/
+/build/
+dist/
+/public/
+/vendor/
+node_modules/
