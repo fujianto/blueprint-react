@@ -7,7 +7,9 @@
   ["module-resolver", {
     "root": ["./src"],
     "alias": {
-      "@": "./src"
+      "@": "./src",
+      "@pages": "./src/pages",
+      "@images": "./src/assets/images"
     }
   }]
  ]
