@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
 const path = require('path');
 
 module.exports = merge(commonConfig, {
   mode: 'development',
+  // mode: process.env.NODE_ENV,
   devtool: 'inline-source-map',
   devServer: {
     static: {

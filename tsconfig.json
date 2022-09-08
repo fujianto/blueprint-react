@@ -7,7 +7,20 @@
     "lib": ["dom", "esnext"],
     "strict": true,
     "sourceMap": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+          "./src/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@images/*": [
+        "./src/assets/images/*"
+      ]
+    }
   },
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import loadable from '@loadable/component';
 import { Provider } from 'react-redux';
 
-import { store } from './store';
+import { store } from '@/store';
 
-const Home = loadable(() => import('./pages/Home'));
-const About = loadable(() => import('./pages/About'));
+const Home = loadable(() => import('@pages/Home'));
+const About = loadable(() => import('@pages/About'));
 
 const container = document.getElementById('app') as Element;
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
