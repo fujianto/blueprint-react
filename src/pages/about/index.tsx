@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+//@ts-ignore: Disable eslint import module error on image
 import logoWeb from '@images/logo.jpg';
 import { useGetUserByNameQuery } from '../../services/user';
 import { User } from '../../types';

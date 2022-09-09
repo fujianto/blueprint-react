@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 import { setPosts } from '../../store/slices/posts';
 import { useAppDispatch, useAppSelector } from '../../store/hook';
 import fetchPosts from '../../services/posts';
-import { Posts } from '../../types/index';
+import { Posts } from '@/types';
 
 function Home() {
   const posts = useAppSelector((state) => state.posts.value);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetchPosts<Posts>('https://jsonplaceholder.typicode.com/posts').then((data) => {
-      dispatch(setPosts({ data: data as Posts, status: 'success' }));
+    void fetchPosts<Posts>('https://jsonplaceholder.typicode.com/posts').then((data) => {
+      dispatch(setPosts({ data: data , status: 'success' }));
     });
   }, []);
 
