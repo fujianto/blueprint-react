@@ -7,8 +7,11 @@ import {
 } from "react-router-dom";
 import { lazy } from '@loadable/component'
 
-const Home = lazy(() => import('./Home'))
-const About = lazy(() => import('./About'))
+// const Home = lazy(() => import('./Home'))
+// const About = lazy(() => import('./About'))
+
+import Home from './home'
+import About from './about'
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript

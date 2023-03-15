@@ -7,10 +7,10 @@ import logoWeb from '../assets/images/logo.jpg'
 export default function About() {
   return (
     <div className='container'>
-      <img src={logoWeb} />
       <Link to="/">Home</Link>
 
-      About
+      <h1>About page</h1>
+      <img src={logoWeb} />
     </div>
   )
 }
